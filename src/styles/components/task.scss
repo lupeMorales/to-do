@@ -1,0 +1,41 @@
+@import "../core/variables.scss";
+
+.task {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  list-style: none;
+
+  &__container {
+    padding: 10px;
+
+    border: none;
+    border-radius: 15px;
+    background-color: $yellow;
+    box-shadow: 5px 5px 5px $grey;
+  }
+  &__level {
+    display: inline-block;
+    position: relative;
+    left: calc(80%);
+    border-radius: 15px;
+    background-color: $green-tag;
+    padding: 0 10px;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &__subtitle {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  &__actions {
+    display: inline-block;
+    position: relative;
+    left: calc(85%);
+  }
+  & i {
+    padding: 2px;
+  }
+}
