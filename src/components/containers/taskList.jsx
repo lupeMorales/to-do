@@ -3,7 +3,7 @@ import { LEVELS } from "../../models/levels.enum";
 import { TaskClass } from "../../models/taskClass";
 import Task from "../pures/task";
 import TaskForm from "../pures/taskForm";
-import "../../styles/pages/taskList.scss";
+import "../../styles/components/taskList.scss";
 import image2 from "../../images/addTask (2).svg";
 
 const TaskList = () => {
@@ -54,10 +54,13 @@ const TaskList = () => {
 
   return (
     <div className="container">
-      <p style={{ fontSize: "2.4rem", padding: "30px" }}>
+      <p
+        className="text-listPage"
+        style={{ fontSize: "2rem", padding: "30px" }}
+      >
         {tasks.length > 0
           ? `There are ${tasks.length} tasks`
-          : "There are NO taks. Add a new task"}
+          : `There are NO taks. `}
       </p>
       {tasks.length === 0 && (
         <img
@@ -69,7 +72,7 @@ const TaskList = () => {
       )}
 
       <section className="container">
-        <ul>
+        <ul className="list">
           {tasks.map((item, index) => {
             return (
               <Task

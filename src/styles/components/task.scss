@@ -3,11 +3,14 @@
 .task {
   width: 100%;
   height: auto;
-  padding: 10px;
+  padding: 10px 20px;
   list-style: none;
+  @media all and (min-width: 1400px) {
+    padding: 20px 30px;
+  }
 
   &__container {
-    padding: 10px;
+    padding: 20px;
     border: none;
     border-radius: 15px;
     background-color: $yellow;
@@ -16,7 +19,6 @@
   &__level {
     border-radius: 15px;
     &-normal {
-      /*  background-color: $green-tag; */
       background-color: $blue-tag;
     }
     &-urgent {

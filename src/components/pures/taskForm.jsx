@@ -30,8 +30,6 @@ const TaskForm = ({ add, open, openState }) => {
         ) : (
           <i className="fa-solid fa-circle-plus fa-4x "></i>
         )}
-
-        {/*     <i className="fa-solid fa-circle-plus fa-4x "></i> */}
       </span>
       {openState && (
         <form className="form__container" onSubmit={addTask}>
@@ -72,6 +70,7 @@ const TaskForm = ({ add, open, openState }) => {
             <option value={LEVELS.BLOCKING}>blocking</option>
           </select>
           <button className="form__button" type="submit">
+            {}
             Add
           </button>
         </form>
