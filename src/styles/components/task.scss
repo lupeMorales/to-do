@@ -3,7 +3,7 @@
 .task {
   width: 100%;
   height: auto;
-  padding: 20px;
+  padding: 10px;
   list-style: none;
 
   &__container {
@@ -14,14 +14,25 @@
     box-shadow: 5px 5px 5px $grey;
   }
   &__level {
-    display: inline-block;
-    position: relative;
-    left: calc(80%);
     border-radius: 15px;
-    background-color: $green-tag;
-    padding: 0 10px;
+    &-normal {
+      /*  background-color: $green-tag; */
+      background-color: #b4cde6;
+    }
+    &-urgent {
+      background-color: $orange-tag;
+    }
+    &-blocking {
+      background-color: $red-tag;
+    }
+    &-text {
+      font-size: 1.4rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
   }
   &__title {
+    margin-top: 10px;
     font-size: 2rem;
     font-weight: bold;
   }
@@ -33,6 +44,7 @@
     display: inline-block;
     position: relative;
     left: calc(85%);
+    cursor: pointer;
   }
   & i {
     padding: 2px;
