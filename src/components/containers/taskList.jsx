@@ -21,17 +21,31 @@ const TaskList = () => {
 
   //change task status: completed/not completed
   function completeTask(task) {
-    console.log("complete mi siela", task);
     const index = tasks.indexOf(task);
     const tempList = [...tasks];
     tempList[index].completed = !tempList[index].completed;
+    setTasks(tempList);
+  }
+
+  function removeTask(task) {
+    console.log("remove task");
+    const index = tasks.indexOf(task);
+    const tempList = [...tasks];
+    tempList.splice(index, 1);
     setTasks(tempList);
   }
   return (
     <section>
       <ul>
         {tasks.map((item, index) => {
-          return <Task key={index} task={item} complete={completeTask} />;
+          return (
+            <Task
+              key={index}
+              task={item}
+              complete={completeTask}
+              remove={removeTask}
+            />
+          );
         })}
       </ul>
     </section>
