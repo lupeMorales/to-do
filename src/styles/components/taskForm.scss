@@ -1,12 +1,15 @@
 @import "../core/variables.scss";
 
 .form {
+  position: sticky;
+  bottom: 0;
   width: 100%;
   height: auto;
   border-radius: 0 35px 0 0;
   background-color: $primaryColor;
   padding: 20px;
   z-index: 10;
+
   &__icon {
     display: flex;
 
@@ -19,10 +22,10 @@
     justify-content: center;
     align-items: stretch;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 140px;
     color: $light-grey;
-    font-size: 1.6rem;
-    gap: 8px;
+    font-size: 1.8rem;
+    gap: 10px;
     padding: 0 20px;
   }
   &__label {
@@ -30,7 +33,7 @@
   }
   &__button {
     display: inline-block;
-    margin: 40px auto 20px;
+    margin: 80px auto 140px;
     width: 100px;
     padding: 10px;
     border: none;
@@ -40,4 +43,9 @@
     color: $light-grey;
     background-color: $green-tag;
   }
+}
+.input-text {
+  border-radius: 15px;
+  border: 1px solid $blue-tag;
+  padding: 10px;
 }

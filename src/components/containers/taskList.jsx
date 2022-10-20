@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { LEVELS } from "../../models/levels.enum";
-import { TaskClass } from "../../models/taskClass.class";
+import { TaskClass } from "../../models/taskClass";
 import Task from "../pures/task";
 import TaskForm from "../pures/taskForm";
 
@@ -8,8 +8,10 @@ const TaskList = () => {
   const task1 = new TaskClass("taskis", "description", true, LEVELS.URGENT);
   const task2 = new TaskClass("taskta", "description", false, LEVELS.NORMAL);
   const task3 = new TaskClass("task3", "description", false, LEVELS.BLOCKING);
+  const task4 = new TaskClass("taskta", "description", false, LEVELS.NORMAL);
+  const task5 = new TaskClass("task3", "description", false, LEVELS.BLOCKING);
 
-  const [tasks, setTasks] = useState([task1, task2, task3]);
+  const [tasks, setTasks] = useState([task1, task2, task3, task4, task5]);
 
   const [loading, setLoading] = useState(true);
 
@@ -28,15 +30,24 @@ const TaskList = () => {
     setTasks(tempList);
   }
 
+  //delete task
   function removeTask(task) {
-    console.log("remove task");
     const index = tasks.indexOf(task);
     const tempList = [...tasks];
     tempList.splice(index, 1);
     setTasks(tempList);
   }
+
+  //add new task from taskForm
+  function addNewTask(task) {
+    console.log("add task");
+    const tempList = [...tasks];
+    tempList.push(task);
+    setTasks(tempList);
+  }
   return (
     <>
+      <p style={{ fontSize: "2.4rem", padding: "30px" }}>Your tasks</p>
       <section>
         <ul>
           {tasks.map((item, index) => {
@@ -51,7 +62,7 @@ const TaskList = () => {
           })}
         </ul>
       </section>
-      <TaskForm />
+      {<TaskForm add={addNewTask} />}
     </>
   );
 };

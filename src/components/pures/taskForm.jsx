@@ -1,43 +1,66 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { LEVELS } from "../../models/levels.enum";
 import "../../styles/components/taskForm.scss";
+import { TaskClass } from "../../models/taskClass.js";
 
-const TaskForm = () => {
+const TaskForm = ({ add }) => {
+  const refName = useRef("");
+  const refDescription = useRef("");
+  const refLevel = useRef(LEVELS.NORMAL);
+
+  function addTask(e) {
+    e.preventDefault();
+    const newTask = new TaskClass(
+      refName.current.value,
+      refDescription.current.value,
+      false,
+      refLevel.current.value
+    );
+    add(newTask);
+  }
   return (
     <section className="form">
       <span className="form__icon">
         <i className="fa-solid fa-circle-plus fa-4x "></i>
       </span>
 
-      <form className="form__container" /* onSubmit={gg} */>
+      <form className="form__container" onSubmit={addTask}>
         <label className="form__label" htmlFor="inputName">
           Task
         </label>
         <input
+          className="input-text"
+          ref={refName}
           id="inputName"
           type="text"
           placeholder="task"
           required
           autoFocus
-        ></input>
+        />
         <label className="form__label" htmlFor="inputDescription">
           Description
         </label>
         <input
+          className="input-text"
+          ref={refDescription}
           id="inputDescription"
           type="text"
-          placeholder="description"
+          placeholder="Task description"
           required
-          autoFocus
-        ></input>
+        />
         <label className="form__label" htmlFor="selectLevel">
           Priority
         </label>
-        <select>
-          <option value={LEVELS.NORMAL}>"normal"</option>
-          <option value={LEVELS.URGENT}>"urgent"</option>
-          <option value={LEVELS.BLOCKING}>"blocking"</option>
+        <select
+          className="input-text"
+          ref={refLevel}
+          defaultValue={LEVELS.NORMAL}
+          id="selectLevel"
+        >
+          <option value={LEVELS.NORMAL}>normal</option>
+          <option value={LEVELS.URGENT}>urgent</option>
+          <option value={LEVELS.BLOCKING}>blocking</option>
         </select>
         <button className="form__button" type="submit">
           Add
@@ -47,6 +70,8 @@ const TaskForm = () => {
   );
 };
 
-TaskForm.propTypes = {};
+TaskForm.propTypes = {
+  add: PropTypes.func.isRequired,
+};
 
 export default TaskForm;
