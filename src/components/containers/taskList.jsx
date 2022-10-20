@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LEVELS } from "../../models/levels.enum";
 import { TaskClass } from "../../models/taskClass.class";
 import Task from "../pures/task";
+import TaskForm from "../pures/taskForm";
 
 const TaskList = () => {
   const task1 = new TaskClass("taskis", "description", true, LEVELS.URGENT);
@@ -35,20 +36,23 @@ const TaskList = () => {
     setTasks(tempList);
   }
   return (
-    <section>
-      <ul>
-        {tasks.map((item, index) => {
-          return (
-            <Task
-              key={index}
-              task={item}
-              complete={completeTask}
-              remove={removeTask}
-            />
-          );
-        })}
-      </ul>
-    </section>
+    <>
+      <section>
+        <ul>
+          {tasks.map((item, index) => {
+            return (
+              <Task
+                key={index}
+                task={item}
+                complete={completeTask}
+                remove={removeTask}
+              />
+            );
+          })}
+        </ul>
+      </section>
+      <TaskForm />
+    </>
   );
 };
 

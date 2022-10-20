@@ -1,0 +1,43 @@
+@import "../core/variables.scss";
+
+.form {
+  width: 100%;
+  height: auto;
+  border-radius: 0 35px 0 0;
+  background-color: $primaryColor;
+  padding: 20px;
+  z-index: 10;
+  &__icon {
+    display: flex;
+
+    justify-content: flex-end;
+    right: 100px;
+    color: $light-grey;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 30px;
+    color: $light-grey;
+    font-size: 1.6rem;
+    gap: 8px;
+    padding: 0 20px;
+  }
+  &__label {
+    margin-top: 20px;
+  }
+  &__button {
+    display: inline-block;
+    margin: 40px auto 20px;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $light-grey;
+    background-color: $green-tag;
+  }
+}
