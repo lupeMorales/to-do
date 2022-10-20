@@ -3,15 +3,16 @@ import { LEVELS } from "../../models/levels.enum";
 import { TaskClass } from "../../models/taskClass";
 import Task from "../pures/task";
 import TaskForm from "../pures/taskForm";
+import "../../styles/pages/taskList.scss";
 
 const TaskList = () => {
   const task1 = new TaskClass("taskis", "description", true, LEVELS.URGENT);
   const task2 = new TaskClass("taskta", "description", false, LEVELS.NORMAL);
   const task3 = new TaskClass("task3", "description", false, LEVELS.BLOCKING);
-  const task4 = new TaskClass("taskta", "description", false, LEVELS.NORMAL);
-  const task5 = new TaskClass("task3", "description", false, LEVELS.BLOCKING);
 
-  const [tasks, setTasks] = useState([task1, task2, task3, task4, task5]);
+  const [tasks, setTasks] = useState([task1, task2, task3]);
+
+  const [formOpen, setFormOpen] = useState(false);
 
   const [loading, setLoading] = useState(true);
 
@@ -45,10 +46,19 @@ const TaskList = () => {
     tempList.push(task);
     setTasks(tempList);
   }
+  function openForm() {
+    setFormOpen(!formOpen);
+  }
+  //open-clouse formu
+
   return (
-    <>
-      <p style={{ fontSize: "2.4rem", padding: "30px" }}>Your tasks</p>
-      <section>
+    <div className="container">
+      <p style={{ fontSize: "2.4rem", padding: "30px" }}>
+        {tasks.length > 0
+          ? `There are ${tasks.length} tasks`
+          : "There are NO taks. Add a new task"}
+      </p>
+      <section className="container">
         <ul>
           {tasks.map((item, index) => {
             return (
@@ -62,8 +72,8 @@ const TaskList = () => {
           })}
         </ul>
       </section>
-      {<TaskForm add={addNewTask} />}
-    </>
+      {<TaskForm add={addNewTask} open={openForm} openState={formOpen} />}
+    </div>
   );
 };
 
