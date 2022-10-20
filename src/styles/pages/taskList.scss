@@ -2,3 +2,10 @@
   width: 100%;
   min-height: 100vh;
 }
+.image-list {
+  display: block;
+  margin: 30% auto;
+  width: 70vw;
+  height: auto;
+  object-fit: cover;
+}

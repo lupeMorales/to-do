@@ -4,6 +4,7 @@ import { TaskClass } from "../../models/taskClass";
 import Task from "../pures/task";
 import TaskForm from "../pures/taskForm";
 import "../../styles/pages/taskList.scss";
+import image2 from "../../images/addTask (2).svg";
 
 const TaskList = () => {
   const task1 = new TaskClass("taskis", "description", true, LEVELS.URGENT);
@@ -58,6 +59,15 @@ const TaskList = () => {
           ? `There are ${tasks.length} tasks`
           : "There are NO taks. Add a new task"}
       </p>
+      {tasks.length === 0 && (
+        <img
+          className="image-list"
+          src={image2}
+          alt="404 error imag"
+          title="404 erro image"
+        ></img>
+      )}
+
       <section className="container">
         <ul>
           {tasks.map((item, index) => {

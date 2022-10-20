@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/pages/Error404.scss";
-import image from "../../images/undraw_taken_re_yn20.svg";
+import image from "../../images/errorImg.svg";
 
 const Error404 = () => {
   return (
@@ -10,8 +10,8 @@ const Error404 = () => {
         <img
           className="error__image--item"
           src={image}
-          alt="dsff"
-          title="dfds"
+          alt="404 error imag"
+          title="404 erro image"
         ></img>
       </figure>
 
