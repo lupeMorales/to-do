@@ -1,13 +1,13 @@
-/* import LoginFormik from "./components/pures/loginFormik"; */
-/* import RegisterFormik from "./components/pures/registerFormik"; */
-import LoginPage from "./pages/auth/LoginPage";
-import Home from "./pages/home/Home";
 import "./styles/App.scss";
-/* import Error404 from "./pages/404/error404.jsx"; */
-/* import Task from "./components/pures/task"; */
-/* import TaskList from "./components/containers/taskList"; */
+
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/home/Home";
+import LoginPage from "./pages/auth/LoginPage";
+import SingUPage from "./pages/auth/SingUpPage";
+import TaskList from "./components/containers/taskList";
 
 function App() {
+  const logged = true;
   return (
     <div className="App">
       {/*    {<Error404 />} */}
@@ -15,8 +15,17 @@ function App() {
       {/*   <TaskList /> */}
       {/*       <LoginFormik /> */}
       {/*     <RegisterFormik /> */}
-      {<Home />}
+      {/*  {<Home />} */}
       {/*     <LoginPage /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<SingUPage />} />
+        <Route
+          path="/tasks"
+          element={logged ? <TaskList /> : <Navigate replace to={"/login"} />}
+        ></Route>
+      </Routes>
     </div>
   );
 }

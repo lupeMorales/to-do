@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/pages/Home.scss";
 import image from "../../images/homeImg.svg";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="home">
@@ -27,8 +28,12 @@ const Home = () => {
           <span className="text-color">rethink</span>
         </h3>
         <section className="button-container">
-          <button className="home__buttom main">login</button>
-          <button className="home__buttom secondary">sing up</button>
+          <button className="home__buttom main">
+            <Link to="/login">login</Link>
+          </button>
+          <button className="home__buttom secondary">
+            <Link to="/register">sign up</Link>
+          </button>
         </section>
       </main>
     </div>

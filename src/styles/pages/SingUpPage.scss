@@ -10,11 +10,12 @@
     font-weight: bold;
     text-transform: capitalize;
     color: $green-tag;
+    font-size: clamp(1.2rem, 1.8vw, 2.2rem);
     padding: 20px;
   }
 
   &__text {
-    margin: 40px 15%;
+    margin: 80px 15%;
     line-height: 55px;
     text-align: left;
     width: 6ch;
@@ -22,10 +23,12 @@
     text-transform: capitalize;
   }
   &__form {
-    height: 70vh;
+    position: absolute;
+    bottom: 0;
+    height: 80vh;
     width: 100%;
     background-color: $light-grey;
-    border-radius: 0 35px 0 0;
+    border-radius: 0 5% 0 0;
   }
 }
 .text-color {

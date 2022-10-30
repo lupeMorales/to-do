@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/pages/SingUPage.scss";
+import "../../styles/pages/SingUpPage.scss";
 /* import SingUFormik from "./components/pures/loginFormik"; */
 
 const SingUPage = () => {
