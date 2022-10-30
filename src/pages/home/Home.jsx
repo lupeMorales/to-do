@@ -26,9 +26,10 @@ const Home = () => {
           plate...<span className="text-color">stop</span> and{" "}
           <span className="text-color">rethink</span>
         </h3>
-
-        <button className="home__buttom main">login</button>
-        <button className="home__buttom secondary">sing up</button>
+        <section className="button-container">
+          <button className="home__buttom main">login</button>
+          <button className="home__buttom secondary">sing up</button>
+        </section>
       </main>
     </div>
   );
