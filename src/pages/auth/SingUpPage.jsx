@@ -9,7 +9,9 @@ const SingUPage = () => {
         <p singup__header--title>to do</p>
       </header>
       <main className="singup__main">
-        <h2 className="singup__text">welcome back, log in!</h2>
+        <h2 className="singup__text">
+          hello, <span className="text-color">sing up!</span>
+        </h2>
 
         <section className="singup__form">{/*     <SingUFormik /> */}</section>
       </main>

@@ -9,7 +9,9 @@ const LoginPage = () => {
         <p login__header--title>to do</p>
       </header>
       <main className="login__main">
-        <h2 className="login__text">welcome back, log in!</h2>
+        <h2 className="login__text">
+          welcome back, <span className="text-color">log in!</span>
+        </h2>
 
         <section className="login__form">{/*     <LoginFormik /> */}</section>
       </main>
