@@ -10,13 +10,6 @@ function App() {
   const logged = true;
   return (
     <div className="App">
-      {/*    {<Error404 />} */}
-      {/*      <Task /> */}
-      {/*   <TaskList /> */}
-      {/*       <LoginFormik /> */}
-      {/*     <RegisterFormik /> */}
-      {/*  {<Home />} */}
-      {/*     <LoginPage /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />

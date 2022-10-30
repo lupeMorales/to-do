@@ -28,12 +28,13 @@ const Home = () => {
           <span className="text-color">rethink</span>
         </h3>
         <section className="button-container">
-          <button className="home__buttom main">
-            <Link to="/login">login</Link>
-          </button>
-          <button className="home__buttom secondary">
-            <Link to="/register">sign up</Link>
-          </button>
+          <Link to="/login" className="link">
+            <button className="home__buttom main">login </button>
+          </Link>
+
+          <Link to="/register" className="link">
+            <button className="home__buttom secondary">sign up </button>
+          </Link>
         </section>
       </main>
     </div>
